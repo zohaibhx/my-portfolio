@@ -8,30 +8,13 @@ st.set_page_config(
 )
 
 # 2. Sleek Dark Theme & Neon Blue Styling
-# Custom CSS to force a black background and white text for all elements
 st.markdown("""
     <style>
-    /* Force the main app background to black and all text to white */
-    .stApp, .stApp p, .stApp span, .stApp label, .stApp div, .stApp h1, .stApp h2, .stApp h3 {
-        background-color: #0E1117 !important;
-        color: #FFFFFF !important;
-    }
-
-    /* Force sidebar background and its text to white */
-    [data-testid="stSidebar"], [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] h2 {
-        background-color: #161B22 !important;
-        color: #FFFFFF !important;
-    }
-
-    /* Ensure expander headers and content are white */
-    .streamlit-expanderHeader, .streamlit-expanderContent {
-        color: #FFFFFF !important;
-    }
-
-    /* Ensure metric values and labels are white */
-    [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
-        color: #FFFFFF !important;
-    }
+    .stApp { background-color: #0E1117; color: #FFFFFF; }
+    [data-testid="stSidebar"] { background-color: #161B22; border-right: 1px solid #3B82F6; }
+    .stMetric { background-color: #1F2937; border: 1px solid #3B82F6; padding: 20px; border-radius: 12px; }
+    h1, h2, h3 { color: #3B82F6 !important; }
+    .expander-content { color: #E5E7EB; }
     </style>
     """, unsafe_allow_html=True)
 
