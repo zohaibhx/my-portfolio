@@ -1,9 +1,14 @@
 import streamlit as st
 
-# 1. Page Configuration & Professional Styling
-st.set_page_config(page_title="Zohaib Hussain | AI Portfolio", page_icon="🤖", layout="wide")
+# 1. Page configuration for a professional AI dashboard
+st.set_page_config(
+    page_title="Zohaib Hussain | AI & CS Portfolio",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# Custom CSS for Black Background & Neon Accents
+# 2. Custom CSS for a sleek Dark Mode & Neon Accents
 st.markdown("""
     <style>
     .stApp {
@@ -12,105 +17,130 @@ st.markdown("""
     }
     [data-testid="stSidebar"] {
         background-color: #161B22;
+        border-right: 1px solid #3B82F6;
     }
     .stMetric {
         background-color: #1F2937;
         border: 1px solid #3B82F6;
-        padding: 15px;
-        border-radius: 10px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
     }
     h1, h2, h3 {
         color: #3B82F6 !important;
+        font-family: 'Inter', sans-serif;
+    }
+    .project-card {
+        background-color: #1F2937;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border-left: 5px solid #3B82F6;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# 2. Sidebar - Professional Identity
-st.sidebar.title("Mohd Zohaib Hussain") [cite: 2]
-st.sidebar.write("📍 Dubai, UAE") [cite: 27]
-st.sidebar.write("📧 ZOHAIBHUSSAIN4321@GMAIL.COM") [cite: 6]
-st.sidebar.write("📱 +971 56 972 9983") [cite: 5]
-st.sidebar.markdown("---")
-st.sidebar.subheader("Technical Toolkit")
-st.sidebar.write("**Languages:** Python (Advanced), SQL, C++, Java") [cite: 64]
-st.sidebar.write("**AI/ML:** TensorFlow, Scikit-Learn, CNNs, SHAP") [cite: 65]
-st.sidebar.write("**Tools:** Docker, Git, Tableau, Excel, SAP BTP") [cite: 55, 59, 67]
-st.sidebar.markdown("---")
-st.sidebar.write("🚗 Valid UAE Driving License") [cite: 3]
+# 3. Sidebar - Profile & Contact details [cite: 2, 3, 5, 6]
+with st.sidebar:
+    st.markdown("# Mohd Zohaib Hussain")
+    st.write("📍 Dubai, UAE")
+    st.write("🚗 Valid UAE Driving License") [cite: 3]
+    st.markdown("---")
+    st.subheader("Connect")
+    st.write("📧 ZOHAIBHUSSAIN4321@GMAIL.COM") [cite: 6]
+    st.write("📱 +971 56 972 9983") [cite: 5]
+    
+    st.markdown("---")
+    st.subheader("Technical Toolkit") [cite: 64, 65, 67]
+    st.write("**Languages:** Python (Advanced), SQL, C++, Java") [cite: 64]
+    st.write("**AI/ML:** TensorFlow, Scikit-Learn, CNNs, SHAP") [cite: 65]
+    st.write("**Tools:** Docker, Git/GitHub, Streamlit, Tableau") [cite: 67, 55]
 
-# 3. Hero Section
-st.title("Industrial AI & Computer Science")
-st.write("Specializing in transforming business needs into scalable technical products[cite: 24].")
+# 4. Hero Section & Career High-Impact Results [cite: 24, 29, 37, 55]
+st.title("Industrial AI & Computer Science Professional")
+st.write("Transforming complex business needs into scalable, data-driven technical solutions.") [cite: 24]
 
-# 4. Key Performance Metrics
-st.header("🚀 High-Impact Results")
+st.header("🚀 Performance Metrics")
 m1, m2, m3 = st.columns(3)
 with m1:
-    st.metric(label="Safety Incidents", value="-35%", delta="Improved Safety") [cite: 29]
+    st.metric(label="Safety Incidents", value="-35%", delta="Impact at InnoBayt") [cite: 29]
 with m2:
-    st.metric(label="Reporting Speed", value="+70%", delta="Efficiency Gain") [cite: 55]
+    st.metric(label="Reporting Efficiency", value="+70%", delta="Impact at Najah Media") [cite: 55]
 with m3:
-    st.metric(label="Model Accuracy", value="90%", delta="Market Prediction") [cite: 37]
+    st.metric(label="Model Accuracy", value="90%", delta="FinTech AI Performance") [cite: 37]
 
 st.markdown("---")
 
-# 5. Project Demos (Detailed Sections)
-st.header("🛠️ Technical Project Showcase")
+# 5. Technical Project Showcase with Demos [cite: 35, 41, 47]
+st.header("🛠️ Detailed Project Showcase")
 
 # --- Project 1: FinTech AI ---
-with st.expander("📊 FinTech AI: Deriv-AI-Market-Sentinel"):
-    st.subheader("Predicting Bitcoin Volatility")
+with st.expander("📊 FinTech AI: Deriv-AI-Market-Sentinel", expanded=True):
     col1, col2 = st.columns([2, 1])
     with col1:
+        st.subheader("Bitcoin Volatility Prediction")
         st.write("""
-        Developed an end-to-end ML pipeline utilizing the CCXT API for real-time data[cite: 35, 36]. 
+        Developed an end-to-end ML pipeline utilizing the **CCXT API** for real-time market data[cite: 36]. 
         Integrated **SHAP** for model explainability to ensure transparent decision-making[cite: 38].
         """)
-        st.write("**Impact:** Achieved 90% accuracy in volatility forecasting[cite: 37].")
+        st.write("**Impact:** Achieved ~90% accuracy in predicting volatility[cite: 37].")
+        st.code("Stack: Python, Scikit-Learn, Streamlit, CCXT API") [cite: 36]
     with col2:
-        st.info("**Try the Logic:**")
-        test_val = st.slider("Select Volatility Index", 0.0, 1.0, 0.5)
-        st.write(f"Predicted Market Risk: {'🔴 HIGH' if test_val > 0.7 else '🟢 STABLE'}")
+        st.info("**Interactive Demo: Risk Logic**")
+        v_index = st.slider("Select Volatility Index", 0.0, 1.0, 0.4)
+        status = "🔴 HIGH RISK" if v_index > 0.7 else "🟢 STABLE"
+        st.subheader(f"Status: {status}")
 
 # --- Project 2: Deep Learning ---
 with st.expander("🎙️ Deep Learning: Speech Emotion Recognition"):
     st.subheader("Audio Sentiment Classification")
     st.write("""
-    Designed a CNN-based system to classify human emotions from raw audio files[cite: 48, 50]. 
-    Used **Librosa** for MFCC feature extraction to detect sentiment for AI customer service bots[cite: 49, 51, 52].
+    Designed a **CNN-based model** to classify human emotions from raw audio files[cite: 50]. 
+    Performed **MFCC feature extraction** on audio data to achieve high-accuracy sentiment detection[cite: 51].
     """)
-    st.code("Stack: Python, TensorFlow, Keras, Librosa") [cite: 49]
+    st.write("**Application:** Designed for integration into AI Customer Service bots[cite: 52].")
+    st.code("Stack: Python, Librosa, TensorFlow/Keras (CNN)") [cite: 49]
 
 # --- Project 3: Risk Analytics ---
 with st.expander("🛡️ Risk Analytics: Fraud Detection Model"):
     st.subheader("Secure Financial Assessment")
     st.write("""
-    Engineered a Random Forest classification model to assess creditworthiness and identify fraud[cite: 39, 41, 42].
-    Optimized to minimize **false negatives**, ensuring high-security standards[cite: 43, 44].
+    Engineered a **Random Forest** classification model to assess creditworthiness and identify fraudulent transactions[cite: 42]. 
+    Optimized the model specifically to **minimize false negatives**, ensuring high-security standards for financial risk[cite: 44, 46].
     """)
     st.code("Stack: Python, Pandas, Scikit-Learn") [cite: 41]
 
 st.markdown("---")
 
-# 6. Detailed Experience
+# 6. Detailed Professional Experience [cite: 27, 31, 53, 59]
 st.header("💼 Professional Journey")
 
-st.subheader("Jr. Product Manager Trainee | InnoBayt") [cite: 26, 27]
+# InnoBayt
+st.subheader("Jr. Product Manager Trainee | InnoBayt") [cite: 27]
 st.write("""
-- Managed IoT Worker Welfare system for **500+ laborers** tracking heart rate and heat stress[cite: 28].
-- Implemented **Automated Flagging Logic** reducing heat-related incidents by 35%[cite: 29].
-- Improved construction accuracy by 22% using **3D Reality Capture**[cite: 30].
+- Managed the lifecycle of an **IoT-based Safety System** for 500+ site laborers[cite: 28].
+- Built **Automated Flagging Logic** that reduced heat-related safety incidents by 35%[cite: 29].
+- Managed **3D Reality Capture** solutions, improving clash detection accuracy by 22%[cite: 30].
 """)
 
+# Najah Media
 st.subheader("Business Analyst | Najah Media") [cite: 53]
 st.write("""
-- Managed ad portfolios for **12+ clients**, increasing ROAS through budget reallocation[cite: 54].
-- Automated **70% of monthly reporting** via Tableau and Excel dashboards[cite: 55].
-- Drove a 1.5% increase in CTR through A/B testing and funnel analysis[cite: 56, 57, 58].
+- Analyzed cross-platform data for 12+ clients to increase **ROAS**[cite: 54].
+- Automated **70% of reporting** using Tableau and Excel dashboards[cite: 55].
+- Performed **A/B testing** on ad creatives, driving a 1.5% increase in CTR[cite: 57, 58].
 """)
 
+# AllMilez
 st.subheader("Operations Analyst | AllMilez") [cite: 31]
 st.write("""
-- Identified bottlenecks in day-to-day processes to enhance operational productivity[cite: 32].
-- Leveraged analytics to implement streamlined business processes[cite: 33].
+- Identified operational bottlenecks and implemented targeted workflow solutions[cite: 32].
+- Leveraged analytics to support the implementation of **streamlined business processes**[cite: 33].
+""")
+
+# INK IT Solutions
+st.subheader("SAP BTP Intern | INK IT Solutions") [cite: 59]
+st.write("""
+- Streamlined workflows to reduce manual processing time[cite: 61].
+- Translated business needs into technical specifications for feature implementation[cite: 62].
 """)
