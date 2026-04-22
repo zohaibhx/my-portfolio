@@ -29,7 +29,7 @@ with st.sidebar:
     st.subheader("Technical Toolkit")
     st.write("**Languages:** Python, SQL, C++, Java")
     st.write("**AI/ML:** TensorFlow, Scikit-Learn, CNNs, SHAP")
-    st.write("**Tools:** Docker, Git, Tableau, Streamlit")
+    st.write("**Tools:** Docker, Git, PowerBI, Streamlit")
 
 # 4. Hero Section & High-Impact Results
 st.title("Industrial AI & Computer Science")
