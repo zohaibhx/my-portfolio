@@ -10,51 +10,41 @@ st.set_page_config(
 # 2. Sleek Dark Theme & Neon Blue Styling
 st.markdown("""
     <style>
-    /* 1. Main Background and Global Text */
-    .stApp { 
-        background-color: #0E1117; 
-    }
-    
-    /* 2. Force ALL text elements to White */
-    .stApp, .stApp p, .stApp span, .stApp label, .stApp li {
+    /* 1. Global Text Visibility */
+    /* This targets standard text, markdown, and labels across the whole app */
+    .stApp p, .stApp span, .stApp label, .stApp li, .stApp small {
         color: #FFFFFF !important;
     }
 
-    /* 3. Sidebar Specific - This fixes your screenshot issue */
-    [data-testid="stSidebar"] { 
-        background-color: #161B22; 
-        border-right: 1px solid #3B82F6; 
-    }
-    
-    /* Targets every text element inside the sidebar specifically */
+    /* 2. Sidebar Text Visibility */
+    /* This specifically fixes the dark text in the sidebar seen in your screenshot */
     [data-testid="stSidebar"] p, 
     [data-testid="stSidebar"] span, 
     [data-testid="stSidebar"] div,
-    [data-testid="stSidebar"] label {
+    [data-testid="stSidebar"] li {
         color: #FFFFFF !important;
     }
 
-    /* 4. Headers - Keeping your cool blue color */
-    h1, h2, h3 { 
-        color: #3B82F6 !important; 
-    }
-
-    /* 5. Metrics & Boxes */
-    .stMetric { 
-        background-color: #1F2937; 
-        border: 1px solid #3B82F6; 
-        padding: 20px; 
-        border-radius: 12px; 
-    }
-    
-    /* Ensure metric labels/values are white */
-    [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
-        color: #FFFFFF !important;
-    }
-
-    /* 6. Expander Content */
+    /* 3. Metric & Expander Visibility */
+    /* Ensures data points and dropdown text are crisp white */
+    [data-testid="stMetricValue"], 
+    [data-testid="stMetricLabel"],
+    .streamlit-expanderHeader,
     .streamlit-expanderContent {
         color: #FFFFFF !important;
+    }
+
+    /* 4. Heading Visibility */
+    /* Keeps your headers blue but ensures they are high-contrast */
+    h1, h2, h3 {
+        color: #3B82F6 !important;
+    }
+
+    /* 5. Link Visibility */
+    /* Makes sure your email link stands out but is still readable */
+    a {
+        color: #60A5FA !important;
+        text-decoration: underline;
     }
     </style>
     """, unsafe_allow_html=True)
