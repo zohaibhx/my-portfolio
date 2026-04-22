@@ -80,17 +80,17 @@ st.header("💼 Professional Journey")
 
 st.subheader("Jr. Product Manager Trainee | InnoBayt")
 st.write("""
-- Managed IoT safety systems for 500+ laborers, tracking biometrics like heart rate and heat stress[cite: 28].
-- Built logic that reduced heat-related incidents by 35% via predictive health alerts[cite: 29].
-- Improved construction accuracy by 22% using 3D Reality Capture solutions[cite: 30].
+- Managed IoT safety systems for 500+ laborers, tracking biometrics like heart rate and heat stress.
+- Built logic that reduced heat-related incidents by 35% via predictive health alerts.
+- Improved construction accuracy by 22% using 3D Reality Capture solutions.
 """)
 
 st.subheader("Business Analyst | Najah Media")
 st.write("""
-- Automated 70% of reporting using Tableau and Excel for 12+ client portfolios[cite: 55].
-- Analyzed cross-platform data to reallocate budgets and increase overall ROAS[cite: 54].
-- Performed A/B testing on ad creatives to drive a 1.5% increase in Click-Through Rate[cite: 57, 58].
+- Automated 70% of reporting using Tableau and Excel for 12+ client portfolios.
+- Analyzed cross-platform data to reallocate budgets and increase overall ROAS.
+- Performed A/B testing on ad creatives to drive a 1.5% increase in Click-Through Rate.
 """)
 
 st.subheader("Operations Analyst | AllMilez")
-st.write("- Identified bottlenecks in daily operations and implemented targeted workflow improvements[cite: 32, 33].")
+st.write("- Identified bottlenecks in daily operations and implemented targeted workflow improvements.")
