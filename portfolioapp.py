@@ -26,7 +26,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # 2. Sidebar - Professional Identity
-st.sidebar.title("Mohd Zohaib Hussain") [cite: 2]
+st.sidebar.title("Mohd Zohaib Hussain") 
 st.sidebar.write("📍 Dubai, UAE") [cite: 27]
 st.sidebar.write("📧 ZOHAIBHUSSAIN4321@GMAIL.COM") [cite: 6]
 st.sidebar.write("📱 +971 56 972 9983") [cite: 5]
