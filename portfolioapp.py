@@ -10,11 +10,52 @@ st.set_page_config(
 # 2. Sleek Dark Theme & Neon Blue Styling
 st.markdown("""
     <style>
-    .stApp { background-color: #0E1117; color: #FFFFFF; }
-    [data-testid="stSidebar"] { background-color: #161B22; border-right: 1px solid #3B82F6; }
-    .stMetric { background-color: #1F2937; border: 1px solid #3B82F6; padding: 20px; border-radius: 12px; }
-    h1, h2, h3 { color: #3B82F6 !important; }
-    .expander-content { color: #E5E7EB; }
+    /* 1. Main Background and Global Text */
+    .stApp { 
+        background-color: #0E1117; 
+    }
+    
+    /* 2. Force ALL text elements to White */
+    .stApp, .stApp p, .stApp span, .stApp label, .stApp li {
+        color: #FFFFFF !important;
+    }
+
+    /* 3. Sidebar Specific - This fixes your screenshot issue */
+    [data-testid="stSidebar"] { 
+        background-color: #161B22; 
+        border-right: 1px solid #3B82F6; 
+    }
+    
+    /* Targets every text element inside the sidebar specifically */
+    [data-testid="stSidebar"] p, 
+    [data-testid="stSidebar"] span, 
+    [data-testid="stSidebar"] div,
+    [data-testid="stSidebar"] label {
+        color: #FFFFFF !important;
+    }
+
+    /* 4. Headers - Keeping your cool blue color */
+    h1, h2, h3 { 
+        color: #3B82F6 !important; 
+    }
+
+    /* 5. Metrics & Boxes */
+    .stMetric { 
+        background-color: #1F2937; 
+        border: 1px solid #3B82F6; 
+        padding: 20px; 
+        border-radius: 12px; 
+    }
+    
+    /* Ensure metric labels/values are white */
+    [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
+        color: #FFFFFF !important;
+    }
+
+    /* 6. Expander Content */
+    .streamlit-expanderContent {
+        color: #FFFFFF !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
