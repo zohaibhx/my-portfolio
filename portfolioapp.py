@@ -33,7 +33,7 @@ with st.sidebar:
 
 # 4. Hero Section & High-Impact Results
 
-st.write("Transforming complex business data into scalable, user-centric technical solutions.")
+st.header("Transforming complex business data into scalable, user-centric technical solutions.")
 
 st.header("🚀 High-Impact Metrics")
 m1, m2, m3 = st.columns(3)
