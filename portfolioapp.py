@@ -32,7 +32,7 @@ with st.sidebar:
     st.write("**Tools:** Docker, Git, PowerBI, Streamlit")
 
 # 4. Hero Section & High-Impact Results
-st.title("Industrial AI & Computer Science")
+
 st.write("Transforming complex business data into scalable, user-centric technical solutions.")
 
 st.header("🚀 High-Impact Metrics")
@@ -87,7 +87,7 @@ st.write("""
 
 st.subheader("Business Analyst | Najah Media")
 st.write("""
-- Automated 70% of reporting using Tableau and Excel for 12+ client portfolios.
+
 - Analyzed cross-platform data to reallocate budgets and increase overall ROAS.
 - Performed A/B testing on ad creatives to drive a 1.5% increase in Click-Through Rate.
 """)
