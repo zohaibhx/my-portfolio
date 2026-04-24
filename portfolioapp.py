@@ -33,9 +33,8 @@ with st.sidebar:
 
 # 4. Hero Section & High-Impact Results
 
-st.header("Transforming complex business data into scalable, user-centric technical solutions.
-Yes, thats ME")
-
+st.header("Transforming complex business data into scalable, user-centric technical solutions.")//
+st.header("Yes, thats ME")
 st.header("🚀 High-Impact Metrics")
 m1, m2, m3 = st.columns(3)
 with m1: st.metric("Safety Incidents", "-35%", delta="At InnoBayt")
