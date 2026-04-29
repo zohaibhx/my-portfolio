@@ -11,11 +11,40 @@ st.set_page_config(
 # 2. Sleek Dark Theme & Neon Blue Styling
 st.markdown("""
     <style>
+    /* Main Background and Text */
     .stApp { background-color: #0E1117; color: #FFFFFF; }
+    
+    /* Sidebar Styling */
     [data-testid="stSidebar"] { background-color: #161B22; border-right: 1px solid #3B82F6; }
+    
+    /* Metric Card Styling */
     .stMetric { background-color: #1F2937; border: 1px solid #3B82F6; padding: 20px; border-radius: 12px; }
+    
+    /* Headers Styling */
     h1, h2, h3 { color: #3B82F6 !important; }
-    .expander-content { color: #E5E7EB; }
+    
+    /* --- NEW EXPANDER STYLING --- */
+    /* Target the expander header background */
+    .st-emotion-cache-p5msec8, .streamlit-expanderHeader {
+        background-color: #0E1117 !important; 
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+
+    /* Keep the text inside the expander white/light grey */
+    .st-emotion-cache-10trblm, .expander-content {
+        color: #E5E7EB !important;
+    }
+
+    /* Force the arrow icon to be white */
+    .st-emotion-cache-p5msec8 svg {
+        fill: #FFFFFF !important;
+    }
+    
+    /* Ensure the border around the whole expander is subtle or removed */
+    .st-emotion-cache-p5msec8 {
+        border-bottom: 1px solid #1F2937 !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
