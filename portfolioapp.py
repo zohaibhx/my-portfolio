@@ -49,12 +49,12 @@ st.header("🛠️ Detailed Projects & Demos")
 # Project 1: FinTech AI
 with st.expander("📊 FinTech AI: Deriv-AI-Market-Sentinel", expanded=True):
     col1, col2 = st.columns([2, 1])
-    with col1:
+with col1:
         st.subheader("Bitcoin Volatility Prediction")
         st.write("Built an end-to-end ML pipeline utilizing the CCXT API for real-time market data. Integrated SHAP for model explainability.")
         st.write("**Impact:** ~90% accuracy in predicting market volatility.")
         st.code("Stack: Python, Scikit-Learn, CCXT API, Streamlit")
-    with col2:
+with col2:
         st.info("**Interactive Risk Logic**")
         v_idx = st.slider("Market Volatility Input", 0.0, 1.0, 0.4)
         risk = "🔴 HIGH" if v_idx > 0.7 else "🟢 STABLE"
@@ -63,7 +63,7 @@ with st.expander("📊 FinTech AI: Deriv-AI-Market-Sentinel", expanded=True):
 # Project 2: AI & Business Intelligence
 with st.expander("📊 AI-Driven Retail Analytics: Fuzzy Logic Inventory Prediction"):
     col1, col2 = st.columns([2, 1]) # This creates the split view
-    with col1:
+with col1:
     st.subheader("Inventory Optimization & Sales Forecasting")
     st.write("Developed an end-to-end analytics solution using a Mamdani Fuzzy Inference System to predict sales volumes under conditions of retail uncertainty.")
     
@@ -74,7 +74,7 @@ with st.expander("📊 AI-Driven Retail Analytics: Fuzzy Logic Inventory Predict
 
     st.write("**Use Case:** Real-time stock optimization for multi-region retail chains to prevent stockouts and overstocking.")
     st.code("Stack: Python, Scikit-Fuzzy, Power BI (DAX), Pandas, Scikit-Learn")
-    with col2:
+with col2:
         st.info("**Fuzzy Decision Engine**")
         demand = st.slider("Demand Level", 0, 100, 50)
         promo = st.checkbox("Promotion On")
@@ -85,13 +85,13 @@ with st.expander("📊 AI-Driven Retail Analytics: Fuzzy Logic Inventory Predict
 
 # Project 3: Deep Learning
 with st.expander("🎙️ Deep Learning: Speech Emotion Recognition"):
-    col1, col2 = st.columns([2, 1]) # This creates the split view
-    with col1:
+    col1, col2 = st.columns([2, 1]) # This creates the split view 
+with col1:
     st.subheader("Audio Sentiment Classification")
     st.write("Designed a CNN-based model to classify human emotions from raw audio files. Used Librosa for MFCC feature extraction.")
     st.write("**Use Case:** Applicable for AI-driven customer service automation.")
     st.code("Stack: Python, Librosa, TensorFlow/Keras (CNN)")
-    with col2:
+with col2:
         st.info("**CNN Classification Test**")
     sample = st.selectbox("Select Audio Sample", ["Calm_01.wav", "Angry_04.wav", "Happy_02.wav"])
     if st.button("Run Inference"):
@@ -105,11 +105,11 @@ with st.expander("🎙️ Deep Learning: Speech Emotion Recognition"):
 # Project 4: Risk Analytics
 with st.expander("🛡️ Risk Analytics: Fraud Detection"):
     col1, col2 = st.columns([2, 1])
-    with col1:
+with col1:
     st.subheader("Creditworthiness Assessment")
     st.write("Engineered a Random Forest model to identify fraudulent transactions, optimized specifically to minimize false negatives.")
     st.code("Stack: Python, Pandas, Scikit-Learn") 
-    with col2:
+with col2:
         st.info("**Fraud Detection Logic**")
     amt = st.number_input("Transaction Amount ($)", value=50.0)
     dist = st.slider("Distance from Home (miles)", 0, 1000, 5)
