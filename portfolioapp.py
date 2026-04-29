@@ -22,28 +22,30 @@ st.markdown("""
     
     /* Headers Styling */
     h1, h2, h3 { color: #3B82F6 !important; }
-    
-    /* --- NEW EXPANDER STYLING --- */
-    /* Target the expander header background */
-    .st-emotion-cache-p5msec8, .streamlit-expanderHeader {
-        background-color: #0E1117 !important; 
+
+    /* --- EXPANDER CUSTOMIZATION --- */
+    /* This makes the expander box and header match the app background */
+    .streamlit-expanderHeader, .st-emotion-cache-p5msec8 {
+        background-color: #0E1117 !important;
         color: #FFFFFF !important;
-        border: none !important;
+        border: 1px solid #1F2937 !important; /* Subtle border to separate from BG */
+        border-radius: 8px;
     }
 
-    /* Keep the text inside the expander white/light grey */
+    /* Ensures the text inside the expander remains readable */
     .st-emotion-cache-10trblm, .expander-content {
         color: #E5E7EB !important;
+        background-color: #0E1117 !important;
     }
 
-    /* Force the arrow icon to be white */
+    /* Targets the arrow icon color */
     .st-emotion-cache-p5msec8 svg {
         fill: #FFFFFF !important;
     }
-    
-    /* Ensure the border around the whole expander is subtle or removed */
-    .st-emotion-cache-p5msec8 {
-        border-bottom: 1px solid #1F2937 !important;
+
+    /* Removes the default border when the expander is hovered/active */
+    .streamlit-expanderHeader:hover {
+        border-color: #3B82F6 !important;
     }
     </style>
     """, unsafe_allow_html=True)
