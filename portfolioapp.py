@@ -11,45 +11,69 @@ st.set_page_config(
 # 2. Sleek Dark Theme & Neon Blue Styling
 st.markdown("""
     <style>
-    /* Main Background and Text */
-    .stApp { background-color: #0E1117; color: #FFFFFF; }
+    /* 1. Main App Background & Primary White Text */
+    .stApp { 
+        background-color: #0E1117; /* Very Dark Navy/Black (#0E1117) */
+        color: #FFFFFF;            /* Pure White (#FFFFFF) */
+    }
     
-    /* Sidebar Styling */
-    [data-testid="stSidebar"] { background-color: #161B22; border-right: 1px solid #3B82F6; }
-    
-    /* Metric Card Styling */
-    .stMetric { background-color: #1F2937; border: 1px solid #3B82F6; padding: 20px; border-radius: 12px; }
-    
-    /* Headers Styling */
-    h1, h2, h3 { color: #3B82F6 !important; }
+    /* 2. Fix the "Acrylic" muted text to be Pure White */
+    .st-emotion-cache-10trblm, p, span, label {
+        color: #FFFFFF !important; /* Pure White (#FFFFFF) */
+        opacity: 1 !important;     /* Remove transparency */
+    }
 
-    /* --- EXPANDER CUSTOMIZATION --- */
-    /* This makes the expander box and header match the app background */
-    .streamlit-expanderHeader, .st-emotion-cache-p5msec8 {
-        background-color: #0E1117 !important;
+    /* 3. Button Styling: Navy Background with White Text */
+    div.stButton > button {
+        background-color: #161B22 !important; /* Navy Blue-Grey (#161B22) */
+        color: #FFFFFF !important;            /* Pure White (#FFFFFF) */
+        border: 1px solid #3B82F6 !important; /* Neon Blue Border (#3B82F6) */
+        font-weight: bold !important;
+        padding: 10px 24px !important;
+        border-radius: 8px !important;
+        transition: 0.3s all ease !important;
+    }
+
+    /* 4. Button Hover Effect: Glow Blue */
+    div.stButton > button:hover {
+        background-color: #3B82F6 !important; /* Neon Blue (#3B82F6) */
+        color: #0E1117 !important;            /* Dark Text on Blue Hover */
+        box-shadow: 0 0 15px #3B82F6 !important; /* Neon Glow */
+    }
+    
+    /* 5. Sidebar Styling */
+    [data-testid="stSidebar"] { 
+        background-color: #161B22; /* Dark Blue-Grey (#161B22) */
+        border-right: 1px solid #3B82F6; /* Neon Blue (#3B82F6) */
+    }
+    
+    /* 6. Metric Card Styling (High Visibility) */
+    .stMetric { 
+        background-color: #1F2937; /* Lighter Slate Grey (#1F2937) */
+        border: 1px solid #3B82F6;    /* Neon Blue (#3B82F6) */
+        padding: 20px; 
+        border-radius: 12px; 
+    }
+    
+    /* 7. Headers Styling */
+    h1, h2, h3 { 
+        color: #3B82F6 !important; /* Neon Blue (#3B82F6) */
+    }
+
+    /* 8. Expander Header Styling */
+    .streamlit-expanderHeader {
+        background-color: #0E1117 !important; /* Matches BG (#0E1117) */
+        color: #FFFFFF !important;            /* Pure White (#FFFFFF) */
+        border: 1px solid #1F2937 !important; /* Subtle Grey Border (#1F2937) */
+    }
+
+    /* Fix for selectbox and slider text visibility */
+    .stSlider label, .stSelectbox label {
         color: #FFFFFF !important;
-        border: 1px solid #1F2937 !important; /* Subtle border to separate from BG */
-        border-radius: 8px;
-    }
-
-    /* Ensures the text inside the expander remains readable */
-    .st-emotion-cache-10trblm, .expander-content {
-        color: #E5E7EB !important;
-        background-color: #0E1117 !important;
-    }
-
-    /* Targets the arrow icon color */
-    .st-emotion-cache-p5msec8 svg {
-        fill: #FFFFFF !important;
-    }
-
-    /* Removes the default border when the expander is hovered/active */
-    .streamlit-expanderHeader:hover {
-        border-color: #3B82F6 !important;
+        font-weight: 500 !important;
     }
     </style>
     """, unsafe_allow_html=True)
-
 # 3. Sidebar - Profile & Core Skills
 with st.sidebar:
     # This adds a clear "Header" so people know this is your info
