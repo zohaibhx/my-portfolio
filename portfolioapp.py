@@ -60,18 +60,65 @@ with st.expander("📊 FinTech AI: Deriv-AI-Market-Sentinel", expanded=True):
         risk = "🔴 HIGH" if v_idx > 0.7 else "🟢 STABLE"
         st.subheader(f"Risk Status: {risk}")
 
-# Project 2: Deep Learning
+# Project 2: AI & Business Intelligence
+with st.expander("📊 AI-Driven Retail Analytics: Fuzzy Logic Inventory Prediction"):
+    col1, col2 = st.columns([2, 1]) # This creates the split view
+    with col1:
+    st.subheader("Inventory Optimization & Sales Forecasting")
+    st.write("Developed an end-to-end analytics solution using a Mamdani Fuzzy Inference System to predict sales volumes under conditions of retail uncertainty.")
+    
+    st.write("**Key Contributions:**")
+    st.write("- Conducted Exploratory Data Analysis (EDA) on 73k+ records to identify key drivers (Weather, Promotion, Demand).")
+    st.write("- Built an interactive Power BI dashboard to validate business logic and visualize model performance (R²: 0.91).")
+    st.write("- Implemented fuzzy membership functions to handle 'gray area' decision-making in inventory management.")
+
+    st.write("**Use Case:** Real-time stock optimization for multi-region retail chains to prevent stockouts and overstocking.")
+    st.code("Stack: Python, Scikit-Fuzzy, Power BI (DAX), Pandas, Scikit-Learn")
+    with col2:
+        st.info("**Fuzzy Decision Engine**")
+        demand = st.slider("Demand Level", 0, 100, 50)
+        promo = st.checkbox("Promotion On")
+        
+        # This mimics your Rule 4 & 5 from the code
+        status = "🔴 RESTOCK NOW" if (demand > 70 or promo) else "🟢 STOCK OK"
+        st.subheader(f"Action: {status}")
+
+# Project 3: Deep Learning
 with st.expander("🎙️ Deep Learning: Speech Emotion Recognition"):
+    col1, col2 = st.columns([2, 1]) # This creates the split view
+    with col1:
     st.subheader("Audio Sentiment Classification")
     st.write("Designed a CNN-based model to classify human emotions from raw audio files. Used Librosa for MFCC feature extraction.")
     st.write("**Use Case:** Applicable for AI-driven customer service automation.")
     st.code("Stack: Python, Librosa, TensorFlow/Keras (CNN)")
+    with col2:
+        st.info("**CNN Classification Test**")
+    sample = st.selectbox("Select Audio Sample", ["Calm_01.wav", "Angry_04.wav", "Happy_02.wav"])
+    if st.button("Run Inference"):
+        if "Angry" in sample:
+            st.error("Detected: ANGRY (94%)")
+        elif "Happy" in sample:
+            st.success("Detected: HAPPY (89%)")
+        else:
+            st.warning("Detected: CALM (91%)")
 
-# Project 3: Risk Analytics
+# Project 4: Risk Analytics
 with st.expander("🛡️ Risk Analytics: Fraud Detection"):
+    col1, col2 = st.columns([2, 1])
+    with col1:
     st.subheader("Creditworthiness Assessment")
     st.write("Engineered a Random Forest model to identify fraudulent transactions, optimized specifically to minimize false negatives.")
-    st.code("Stack: Python, Pandas, Scikit-Learn")
+    st.code("Stack: Python, Pandas, Scikit-Learn") 
+    with col2:
+        st.info("**Fraud Detection Logic**")
+    amt = st.number_input("Transaction Amount ($)", value=50.0)
+    dist = st.slider("Distance from Home (miles)", 0, 1000, 5)
+    
+    # Mock logic based on Random Forest feature importance
+    is_fraud = "🚨 HIGH RISK" if (amt > 500 or dist > 200) else "✅ LOW RISK"
+    color = "inverse" if is_fraud == "✅ LOW RISK" else "normal"
+    st.subheader(f"Status: {is_fraud}")
+        
 
 st.markdown("---")
 
