@@ -85,22 +85,24 @@ with col2:
 
 # Project 3: Deep Learning
 with st.expander("🎙️ Deep Learning: Speech Emotion Recognition"):
-    col1, col2 = st.columns([2, 1]) # This creates the split view 
-with col1:
-    st.subheader("Audio Sentiment Classification")
-    st.write("Designed a CNN-based model to classify human emotions from raw audio files. Used Librosa for MFCC feature extraction.")
-    st.write("**Use Case:** Applicable for AI-driven customer service automation.")
-    st.code("Stack: Python, Librosa, TensorFlow/Keras (CNN)")
-with col2:
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        st.subheader("Audio Sentiment Classification")
+        st.write("Designed a CNN-based model to classify human emotions from raw audio files. Used Librosa for MFCC feature extraction.")
+        st.write("**Use Case:** Applicable for AI-driven customer service automation.")
+        st.code("Stack: Python, Librosa, TensorFlow/Keras (CNN)")
+
+    with col2:
         st.info("**CNN Classification Test**")
-    sample = st.selectbox("Select Audio Sample", ["Calm_01.wav", "Angry_04.wav", "Happy_02.wav"])
-    if st.button("Run Inference"):
-        if "Angry" in sample:
-            st.error("Detected: ANGRY (94%)")
-        elif "Happy" in sample:
-            st.success("Detected: HAPPY (89%)")
-        else:
-            st.warning("Detected: CALM (91%)")
+        sample = st.selectbox("Select Audio Sample", ["Calm_01.wav", "Angry_04.wav", "Happy_02.wav"])
+        if st.button("Run Inference"):
+            if "Angry" in sample:
+                st.error("Detected: ANGRY (94%)")
+            elif "Happy" in sample:
+                st.success("Detected: HAPPY (89%)")
+            else:
+                st.warning("Detected: CALM (91%)")
 
 # Project 4: Risk Analytics
 with st.expander("🛡️ Risk Analytics: Fraud Detection"):
