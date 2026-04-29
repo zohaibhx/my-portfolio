@@ -20,16 +20,31 @@ st.markdown("""
 
 # 3. Sidebar - Profile & Core Skills
 with st.sidebar:
-    st.title("Zohaib Hussain")
+    # This adds a clear "Header" so people know this is your info
+    st.title("👤 Personal Profile") 
+    st.markdown("---")
+    
+    # Your Name & Contacts
+    st.header("Zohaib Hussain")
+    st.caption("AI Engineer & Data Specialist") # Adds a nice subtitle
+    
     st.write("📍 Dubai, UAE")
     st.write("📧 ZOHAIBHUSSAIN4321@GMAIL.COM")
     st.write("📱 +971 56 972 9983")
     st.write("🚗 Valid UAE Driving License")
+    
     st.markdown("---")
-    st.subheader("Technical Toolkit")
+    
+    # Technical Toolkit Section
+    st.subheader("🛠️ Technical Toolkit")
     st.write("**Languages:** Python, SQL, C++, Java")
     st.write("**AI/ML:** TensorFlow, Scikit-Learn, CNNs, SHAP")
     st.write("**Tools:** Docker, Git, PowerBI, Streamlit")
+    
+    # Social Links (Great for recruiters!)
+    st.markdown("---")
+    st.write("[🔗 LinkedIn](https://linkedin.com/in/yourprofile)")
+    st.write("[📂 GitHub](https://github.com/yourusername)")
 
 # 4. Hero Section & High-Impact Results
 st.header("Transforming complex business data into scalable, user-centric technical solutions.")
