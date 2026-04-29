@@ -204,3 +204,6 @@ st.write("""
 
 st.subheader("Operations Analyst | AllMilez")
 st.write("- Identified bottlenecks in daily operations and implemented targeted workflow improvements.")
+
+st.subheader("SAP|BTP Intern Management Trainee | INK It solns")
+st.write("- Supported the deployment and management of cloud-native applications on SAP BTP, ensuring seamless integration between legacy ERP systems and modern cloud environments.")
