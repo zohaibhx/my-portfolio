@@ -11,66 +11,61 @@ st.set_page_config(
 # 2. Sleek Dark Theme & Neon Blue Styling
 st.markdown("""
     <style>
-    /* 1. Main App Background & Primary White Text */
+    /* 1. Main Background */
     .stApp { 
-        background-color: #0E1117; /* Very Dark Navy/Black (#0E1117) */
-        color: #FFFFFF;            /* Pure White (#FFFFFF) */
+        background-color: #0E1117; /* Midnight Black (#0E1117) */
+        color: #FFFFFF; 
     }
     
-    /* 2. Fix the "Acrylic" muted text to be Pure White */
-    .st-emotion-cache-10trblm, p, span, label {
-        color: #FFFFFF !important; /* Pure White (#FFFFFF) */
-        opacity: 1 !important;     /* Remove transparency */
+    /* 2. FIX: Make the "Stack" (Code Blocks) Visible */
+    code {
+        color: #3B82F6 !important; /* Neon Blue Text (#3B82F6) */
+        background-color: #161B22 !important; /* Navy Background (#161B22) */
+        border: 1px solid #1F2937 !important;
+        padding: 5px !important;
+        border-radius: 5px !important;
     }
-
-    /* 3. Button Styling: Navy Background with White Text */
+    
+    /* 3. FIX: Button Visibility (Normal, Hover, and Clicked) */
     div.stButton > button {
-        background-color: #161B22 !important; /* Navy Blue-Grey (#161B22) */
-        color: #FFFFFF !important;            /* Pure White (#FFFFFF) */
-        border: 1px solid #3B82F6 !important; /* Neon Blue Border (#3B82F6) */
-        font-weight: bold !important;
-        padding: 10px 24px !important;
-        border-radius: 8px !important;
-        transition: 0.3s all ease !important;
+        background-color: #161B22 !important; /* Navy Blue (#161B22) */
+        color: #FFFFFF !important;            /* White Text */
+        border: 1px solid #3B82F6 !important; /* Neon Blue Border */
+        width: 100%;
     }
 
-    /* 4. Button Hover Effect: Glow Blue */
+    /* Prevent the button from turning white when clicked/active */
+    div.stButton > button:active, div.stButton > button:focus {
+        background-color: #3B82F6 !important; /* Stays Blue (#3B82F6) */
+        color: #0E1117 !important;            /* Dark text for contrast */
+        border: 1px solid #FFFFFF !important;
+    }
+
     div.stButton > button:hover {
-        background-color: #3B82F6 !important; /* Neon Blue (#3B82F6) */
-        color: #0E1117 !important;            /* Dark Text on Blue Hover */
-        box-shadow: 0 0 15px #3B82F6 !important; /* Neon Glow */
+        background-color: #3B82F6 !important; /* Glow Blue on Hover */
+        color: #0E1117 !important;
     }
-    
-    /* 5. Sidebar Styling */
+
+    /* 4. Sidebar Branding */
     [data-testid="stSidebar"] { 
-        background-color: #161B22; /* Dark Blue-Grey (#161B22) */
-        border-right: 1px solid #3B82F6; /* Neon Blue (#3B82F6) */
-    }
-    
-    /* 6. Metric Card Styling (High Visibility) */
-    .stMetric { 
-        background-color: #1F2937; /* Lighter Slate Grey (#1F2937) */
-        border: 1px solid #3B82F6;    /* Neon Blue (#3B82F6) */
-        padding: 20px; 
-        border-radius: 12px; 
-    }
-    
-    /* 7. Headers Styling */
-    h1, h2, h3 { 
-        color: #3B82F6 !important; /* Neon Blue (#3B82F6) */
+        background-color: #161B22; 
+        border-right: 2px solid #3B82F6; 
     }
 
-    /* 8. Expander Header Styling */
+    /* 5. Metrics Branding */
+    [data-testid="stMetricValue"] {
+        color: #3B82F6 !important; /* Make numbers Neon Blue */
+    }
+
+    /* 6. Fix for Expanders to stay dark */
     .streamlit-expanderHeader {
-        background-color: #0E1117 !important; /* Matches BG (#0E1117) */
-        color: #FFFFFF !important;            /* Pure White (#FFFFFF) */
-        border: 1px solid #1F2937 !important; /* Subtle Grey Border (#1F2937) */
+        background-color: #0E1117 !important;
+        border: 1px solid #1F2937 !important;
     }
-
-    /* Fix for selectbox and slider text visibility */
-    .stSlider label, .stSelectbox label {
+    
+    /* Force all text in the app to be opaque white */
+    p, li, label, div {
         color: #FFFFFF !important;
-        font-weight: 500 !important;
     }
     </style>
     """, unsafe_allow_html=True)
