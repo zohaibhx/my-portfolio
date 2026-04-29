@@ -13,59 +13,60 @@ st.markdown("""
     <style>
     /* 1. Main Background */
     .stApp { 
-        background-color: #0E1117; /* Midnight Black (#0E1117) */
+        background-color: #0E1117; /* Midnight Black */
         color: #FFFFFF; 
     }
     
-    /* 2. FIX: Make the "Stack" (Code Blocks) Visible */
-    code {
-        color: #3B82F6 !important; /* Neon Blue Text (#3B82F6) */
-        background-color: #161B22 !important; /* Navy Background (#161B22) */
-        border: 1px solid #1F2937 !important;
-        padding: 5px !important;
-        border-radius: 5px !important;
+    /* FIX 1: THE EXPANDER HEADER (The 'Project' title bar) */
+    /* This makes the clickable bar visible with a neon blue border */
+    .streamlit-expanderHeader {
+        background-color: #161B22 !important; /* Navy Blue-Grey */
+        color: #FFFFFF !important;            /* Pure White text */
+        border: 1px solid #3B82F6 !important; /* Neon Blue border */
+        border-radius: 8px !important;
+        margin-bottom: 5px !important;
     }
     
-    /* 3. FIX: Button Visibility (Normal, Hover, and Clicked) */
-    div.stButton > button {
-        background-color: #161B22 !important; /* Navy Blue (#161B22) */
-        color: #FFFFFF !important;            /* White Text */
+    /* FIX 2: THE SUBHEADERS INSIDE THE EXPANDER */
+    /* Streamlit sometimes mutes these; this forces them to be Neon Blue */
+    .st-emotion-cache-12w0qpk, h3 {
+        color: #3B82F6 !important; /* Neon Blue (#3B82F6) */
+        opacity: 1 !important;
+        font-weight: bold !important;
+    }
+
+    /* FIX 3: THE 'STACK' SECTION (Code Blocks) */
+    /* Ensuring the background isn't blending into the app background */
+    code {
+        color: #FFFFFF !important;            /* White text */
+        background-color: #1F2937 !important; /* Lighter Grey (#1F2937) */
         border: 1px solid #3B82F6 !important; /* Neon Blue Border */
-        width: 100%;
+        padding: 4px !important;
     }
 
-    /* Prevent the button from turning white when clicked/active */
-    div.stButton > button:active, div.stButton > button:focus {
-        background-color: #3B82F6 !important; /* Stays Blue (#3B82F6) */
-        color: #0E1117 !important;            /* Dark text for contrast */
-        border: 1px solid #FFFFFF !important;
+    /* FIX 4: SLIDER & TOGGLE LABELS */
+    /* Making sure the "Market Volatility" or "Demand Level" is 100% white */
+    .stSlider label, .stToggle label, p, li {
+        color: #FFFFFF !important;
+        opacity: 1 !important;
     }
 
-    div.stButton > button:hover {
-        background-color: #3B82F6 !important; /* Glow Blue on Hover */
-        color: #0E1117 !important;
-    }
-
-    /* 4. Sidebar Branding */
+    /* Sidebar Border & Styling */
     [data-testid="stSidebar"] { 
         background-color: #161B22; 
         border-right: 2px solid #3B82F6; 
     }
 
-    /* 5. Metrics Branding */
-    [data-testid="stMetricValue"] {
-        color: #3B82F6 !important; /* Make numbers Neon Blue */
-    }
-
-    /* 6. Fix for Expanders to stay dark */
-    .streamlit-expanderHeader {
-        background-color: #0E1117 !important;
-        border: 1px solid #1F2937 !important;
+    /* Keep Buttons Navy and White */
+    div.stButton > button {
+        background-color: #161B22 !important;
+        color: #FFFFFF !important;
+        border: 1px solid #3B82F6 !important;
     }
     
-    /* Force all text in the app to be opaque white */
-    p, li, label, div {
-        color: #FFFFFF !important;
+    div.stButton > button:hover {
+        background-color: #3B82F6 !important;
+        color: #0E1117 !important;
     }
     </style>
     """, unsafe_allow_html=True)
