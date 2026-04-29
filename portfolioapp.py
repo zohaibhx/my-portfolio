@@ -5,6 +5,7 @@ st.set_page_config(
     page_title="Zohaib Hussain | AI Portfolio", 
     page_icon="🤖", 
     layout="wide"
+    initial_sidebar_state="expanded"
 )
 
 # 2. Sleek Dark Theme & Neon Blue Styling
@@ -27,10 +28,10 @@ with st.sidebar:
     # Your Name & Contacts
     st.header("Zohaib Hussain")
     st.caption("AI Engineer & Data Specialist") # Adds a nice subtitle
-    
+    st.write("email: zohaibhussain4321@gmail.com")
+    st.write("phone: +971569729983")
     st.write("📍 Dubai, UAE")
-    st.write("📧 ZOHAIBHUSSAIN4321@GMAIL.COM")
-    st.write("📱 +971 56 972 9983")
+    
     st.write("🚗 Valid UAE Driving License")
     
     st.markdown("---")
@@ -49,6 +50,9 @@ with st.sidebar:
 # 4. Hero Section & High-Impact Results
 st.header("Transforming complex business data into scalable, user-centric technical solutions.")
 st.header("Yes, that's ME")
+if st.button("📧 Get In Touch"):
+    st.write("Email: zohaibhussain4321@gmail.com")
+    st.write("Phone: +971 56 972 9983")
 st.header("🚀 High-Impact Metrics")
 m1, m2, m3 = st.columns(3)
 with m1: 
